@@ -12,16 +12,6 @@ import {
     Recycle
 } from 'react-bootstrap-icons';
 
-function fetchData(sector,setData) {
-    fetch('http://localhost:3001/emissions?Substance=CO2&Sector='+sector)
-    .then((res) => {
-        return res.json();
-    })
-    .then((data) => {
-        setData(data);
-    });
-}
-
 function Menu(props) {
     return (
         <Navbar expand="lg" className="position-fixed">
@@ -30,14 +20,14 @@ function Menu(props) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="flex-column">
                         <Navbar.Brand>Menu</Navbar.Brand>
-                        <Nav.Link onClick={()=>fetchData('Agriculture',props.onSelect)}><Flower1 />Agriculture</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Buildings',props.onSelect)}><Buildings />Buildings</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Fuel%20Exploitation',props.onSelect)}><FuelPumpFill />Fuel Exploitation</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Industrial%20Combustion',props.onSelect)}><Fire />Industrial Combustion</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Power%20Industry',props.onSelect)}><PlugFill />Power Industry</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Processes',props.onSelect)}><GearFill />Processes</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Transport',props.onSelect)}><AirplaneFill />Transport</Nav.Link>
-                        <Nav.Link onClick={()=>fetchData('Waste',props.onSelect)}><Recycle />Waste</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Agriculture')}><Flower1 />Agriculture</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Buildings')}><Buildings />Buildings</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Fuel%20Exploitation')}><FuelPumpFill />Fuel Exploitation</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Industrial%20Combustion')}><Fire />Industrial Combustion</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Power%20Industry')}><PlugFill />Power Industry</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Processes')}><GearFill />Processes</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Transport')}><AirplaneFill />Transport</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Waste')}><Recycle />Waste</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

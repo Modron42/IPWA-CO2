@@ -6,22 +6,26 @@ import Footer from './Footer';
 import Emissions from './Emissions';
 
 function App() {
+    const [sector, setSector] = useState('Agriculture');
+    const [year, setYear] = useState('2022');
     const [emissions, setEmissions] = useState([]);
+
     useEffect(() => {
-        fetch('http://localhost:3001/emissions?Sector=Industrial%20Combustion&Substance=CO2')
+        fetch(`http://localhost:3001/emissions?Substance=CO2&Sector=${sector}`)
             .then((res) => {
                 return res.json();
             })
             .then((data) => {
                 setEmissions(data);
             });
-    }, []);    
+    }, [sector]);
+
     return (
         <div>
             <Header />
-            <Menu onSelect = {setEmissions} />
+            <Menu onSelect={setSector} />
             <div className="content">
-                <Emissions data = {emissions} />
+                <Emissions data={emissions} year={year} />
                 <Footer />
             </div>
         </div>
