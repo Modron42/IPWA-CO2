@@ -11,7 +11,7 @@ function App() {
     const [emissions, setEmissions] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3001/emissions?Substance=CO2&Sector=${sector}`)
+        fetch(`http://localhost:3001/emissions?Substance=CO2&Sector=${encodeURIComponent(sector)}`)
             .then((res) => {
                 return res.json();
             })
@@ -25,7 +25,7 @@ function App() {
             <Header />
             <Menu onSelect={setSector} />
             <div className="content">
-                <Emissions data={emissions} year={year} />
+                <Emissions sector={sector} data={emissions} year={year} />
                 <Footer />
             </div>
         </div>

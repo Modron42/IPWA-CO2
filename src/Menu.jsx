@@ -22,9 +22,9 @@ function Menu(props) {
                         <Navbar.Brand>Menu</Navbar.Brand>
                         <Nav.Link onClick={() => props.onSelect('Agriculture')}><Flower1 />Agriculture</Nav.Link>
                         <Nav.Link onClick={() => props.onSelect('Buildings')}><Buildings />Buildings</Nav.Link>
-                        <Nav.Link onClick={() => props.onSelect('Fuel%20Exploitation')}><FuelPumpFill />Fuel Exploitation</Nav.Link>
-                        <Nav.Link onClick={() => props.onSelect('Industrial%20Combustion')}><Fire />Industrial Combustion</Nav.Link>
-                        <Nav.Link onClick={() => props.onSelect('Power%20Industry')}><PlugFill />Power Industry</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Fuel Exploitation')}><FuelPumpFill />Fuel Exploitation</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Industrial Combustion')}><Fire />Industrial Combustion</Nav.Link>
+                        <Nav.Link onClick={() => props.onSelect('Power Industry')}><PlugFill />Power Industry</Nav.Link>
                         <Nav.Link onClick={() => props.onSelect('Processes')}><GearFill />Processes</Nav.Link>
                         <Nav.Link onClick={() => props.onSelect('Transport')}><AirplaneFill />Transport</Nav.Link>
                         <Nav.Link onClick={() => props.onSelect('Waste')}><Recycle />Waste</Nav.Link>
