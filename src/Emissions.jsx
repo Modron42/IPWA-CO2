@@ -6,12 +6,18 @@ function Emissions(props) {
         <Container>
             <h5><b>{props.sector}</b> emissions by country</h5>
             <Table responsive striped bordered hover size="sm">
-                {props.data.map(element =>
-                    <tr>
-                        <td>{element.Country}</td>
-                        <td>{element[props.year]} Mt CO&#8322;</td>
-                    </tr>
-                )}
+                <thead class="fs-5 fw-bold">
+                    <td>Country</td>
+                    <td>Mt CO&#8322; in year {props.year}</td>
+                </thead>
+                <tbody>
+                    {props.data.map(element =>
+                        <tr>
+                            <td>{element.Country}</td>
+                            <td>{element[props.year]}</td>
+                        </tr>
+                    )}
+                </tbody>
             </Table>
         </Container>
     );

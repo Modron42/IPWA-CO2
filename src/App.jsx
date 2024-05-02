@@ -7,7 +7,7 @@ import Emissions from './Emissions';
 
 function App() {
     const [sector, setSector] = useState('Agriculture');
-    const [year, setYear] = useState('2022');
+    const [year, setYear] = useState(2022);
     const [emissions, setEmissions] = useState([]);
 
     useEffect(() => {
@@ -23,9 +23,9 @@ function App() {
     return (
         <div>
             <Header />
-            <Menu onSelect={setSector} />
+            <Menu year={year} onSelectSector={setSector} onSelectYear={setYear}/>
             <div className="content">
-                <Emissions sector={sector} data={emissions} year={year} />
+                <Emissions id="emissions" sector={sector} data={emissions} year={year} />
                 <Footer />
             </div>
         </div>

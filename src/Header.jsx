@@ -17,10 +17,10 @@ function Header() {
                         />
                     </Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">HOME</Nav.Link>
-                        <Nav.Link href="#data">DATA</Nav.Link>
-                        <Nav.Link href="#reports">REPORTS</Nav.Link>
-                        <Nav.Link href="#contact">CONTACT</Nav.Link>
+                        <Nav.Link href="#">HOME</Nav.Link>
+                        <Nav.Link href="#emissions">EMISSIONEN</Nav.Link>
+                        <Nav.Link href="https://www.iu.de/">IU</Nav.Link>
+                        <Nav.Link href="https://edgar.jrc.ec.europa.eu/report_2023">QUELLE</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
