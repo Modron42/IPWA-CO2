@@ -26,6 +26,7 @@ function App() {
             <Menu year={year} onSelectSector={setSector} onSelectYear={setYear}/>
             <div className="content">
                 <Emissions id="emissions" sector={sector} data={emissions} year={year} />
+                <hr />
                 <Footer />
             </div>
         </div>

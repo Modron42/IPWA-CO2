@@ -18,9 +18,9 @@ function Header() {
                     </Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="#">HOME</Nav.Link>
-                        <Nav.Link href="#emissions">EMISSIONEN</Nav.Link>
+                        <Nav.Link href="#emissions">EMISSIONS</Nav.Link>
                         <Nav.Link href="https://www.iu.de/">IU</Nav.Link>
-                        <Nav.Link href="https://edgar.jrc.ec.europa.eu/report_2023">QUELLE</Nav.Link>
+                        <Nav.Link href="https://edgar.jrc.ec.europa.eu/report_2023">DATA SOURCE</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
