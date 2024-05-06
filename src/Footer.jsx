@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <h4>IMRESSUM</h4>
+            <h4>IMPRESSUM</h4>
             <p>John von Neumann, BSc Applied Computer Science student</p>
             <p>IU Internationale Hochschule GmbH, Juri-Gagarin-Ring 152, D-99084 ErfurtGermany</p>
             <p>This example page was developed as a practical assignment for the <b>IPWA-CO2</b> course and is provided as-is without any warranty or liability.</p>

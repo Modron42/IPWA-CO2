@@ -52,7 +52,7 @@ function Menu(props) {
                         <Form.Control type="text" onChange={(event) => { props.onSelectFilter(event.target.value.toLowerCase()); }} />
                         <Form.Text>Start typing to filter results</Form.Text>
                         <hr />
-                        <Form.Select onChange = {(event)=>props.onSelectSort(event.target.value.toLowerCase() == 'ascending')}>
+                        <Form.Select onChange={(event) => props.onSelectSort(event.target.value.toLowerCase() === 'ascending')}>
                             <option>Ascending</option>
                             <option>Descending</option>
                         </Form.Select>
