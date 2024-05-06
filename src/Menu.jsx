@@ -2,6 +2,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Form from 'react-bootstrap/Form';
 import {
     Flower1,
     Buildings,
@@ -44,9 +45,18 @@ function Menu(props) {
                                 maxHeight: "200px",
                                 overflowY: "auto"
                             }}>
-                                {range(1970, 2022).map(x => <Dropdown.Item onClick={() => props.onSelectYear(x)}>{x}</Dropdown.Item>)}
+                                {range(1970, 2022).map(x => <Dropdown.Item key={x} onClick={() => props.onSelectYear(x)}>{x}</Dropdown.Item>)}
                             </Dropdown.Menu>
                         </Dropdown>
+                        <hr />
+                        <Form.Control type="text" onChange={(event) => { props.onSelectFilter(event.target.value.toLowerCase()); }} />
+                        <Form.Text>Start typing to filter results</Form.Text>
+                        <hr />
+                        <Form.Select onChange = {(event)=>props.onSelectSort(event.target.value.toLowerCase() == 'ascending')}>
+                            <option>Ascending</option>
+                            <option>Descending</option>
+                        </Form.Select>
+                        <Form.Text>Sort countries</Form.Text>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
