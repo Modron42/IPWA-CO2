@@ -20,6 +20,9 @@ const range = (start, stop) =>
         (value, index) => start + index
     );
 
+const decodeSort = (value) => value.toLowerCase().includes('name');
+const decodeOrder = (value) => value.toLowerCase().includes('ascending');
+
 function Menu(props) {
     return (
         <Navbar expand="lg" className="position-fixed">
@@ -49,14 +52,19 @@ function Menu(props) {
                             </Dropdown.Menu>
                         </Dropdown>
                         <hr />
-                        <Form.Control type="text" onChange={(event) => { props.onSelectFilter(event.target.value.toLowerCase()); }} />
+                        <Form.Control type="text" onChange={(event) => { props.onSelectFilter(event.target.value); }} />
                         <Form.Text>Start typing to filter results</Form.Text>
                         <hr />
-                        <Form.Select onChange={(event) => props.onSelectSort(event.target.value.toLowerCase() === 'ascending')}>
-                            <option>Ascending</option>
-                            <option>Descending</option>
+                        <Form.Select onChange={(event) => {
+                            props.onSelectSort(decodeSort(event.target.value));
+                            props.onSelectOrder(decodeOrder(event.target.value));
+                        }}>
+                            <option>Name Ascending</option>
+                            <option>Name Descending</option>
+                            <option>Emission Ascending</option>
+                            <option>Emission Descending</option>
                         </Form.Select>
-                        <Form.Text>Sort countries</Form.Text>
+                        <Form.Text>Sort by name or emission value</Form.Text>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

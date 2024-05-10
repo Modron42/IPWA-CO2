@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 
 function Emissions(props) {
     const filtered = props.data.filter((x) => x.Country.toLowerCase().includes(props.filter));
-    const data = props.sort ? filtered : filtered.toReversed();
+    const data = props.order ? filtered : filtered.toReversed();
     return (
         <Container>
             <h5><b>{props.sector}</b> emissions by country</h5>
