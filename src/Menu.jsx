@@ -25,7 +25,7 @@ const decodeOrder = (value) => value.toLowerCase().includes('ascending');
 
 function Menu(props) {
     return (
-        <Navbar expand="lg" className="position-fixed">
+        <Navbar expand="lg">
             <Container>
                 <Navbar.Toggle />
                 <Navbar.Collapse>

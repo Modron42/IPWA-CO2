@@ -5,6 +5,18 @@ import Menu from './Menu';
 import Footer from './Footer';
 import Emissions from './Emissions';
 
+const listOfRTL = ['ar', 'arc', 'dv', 'fa', 'ha', 'he', 'khw', 'ks', 'ku', 'ps', 'ur', 'yi'];
+
+function languageRTL(value) {
+
+    if (value.includes('-')) {
+        const lang = value.split('-')[0];
+        return listOfRTL.includes(lang);
+    } else {
+        return listOfRTL.includes(value);
+    }
+}
+
 function App() {
     const [sector, setSector] = useState('Agriculture');
     const [year, setYear] = useState(2022);
@@ -14,7 +26,6 @@ function App() {
     const [emissions, setEmissions] = useState([]);
 
     useEffect(() => {
-        console.log(sector, sort, year);
         fetch(`http://localhost:3001/emissions?Substance=CO2&Sector=${encodeURIComponent(sector)}&_sort=${sort ? 'Country' : year}`)
             .then((res) => {
                 return res.json();
@@ -27,14 +38,16 @@ function App() {
     return (
         <div>
             <Header />
-            <Menu
-                year={year}
-                onSelectSector={setSector}
-                onSelectYear={setYear}
-                onSelectFilter={setFilter}
-                onSelectSort={setSort}
-                onSelectOrder={setOrder} />
-            <div className="content">
+            <div className={languageRTL(window.navigator.language) ? 'pane-rtl' : 'pane'}>
+                <Menu
+                    year={year}
+                    onSelectSector={setSector}
+                    onSelectYear={setYear}
+                    onSelectFilter={setFilter}
+                    onSelectSort={setSort}
+                    onSelectOrder={setOrder} />
+            </div>
+            <div className={languageRTL(window.navigator.language) ? 'content-rtl' : 'content'}>
                 <Emissions
                     id="emissions"
                     sector={sector}

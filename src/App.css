@@ -42,3 +42,21 @@
   margin-left: 300px;
   margin-top: 50px;
 }
+
+.pane
+{
+  position: fixed;
+  left: 10px;
+}
+
+.content-rtl
+{
+  margin-right: 300px;
+  margin-top: 50px;
+}
+
+.pane-rtl
+{
+  position: fixed;
+  right: 10px;
+}
