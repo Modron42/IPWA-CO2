@@ -29,7 +29,7 @@ function Menu(props) {
             <Container>
                 <Navbar.Toggle />
                 <Navbar.Collapse>
-                    <Nav className="flex-column">
+                    <Nav className="flex-column bg-body">
                         <Navbar.Brand>Menu</Navbar.Brand>
                         <Nav.Link onClick={() => props.onSelectSector('Agriculture')}><Flower1 /> Agriculture</Nav.Link>
                         <Nav.Link onClick={() => props.onSelectSector('Buildings')}><Buildings /> Buildings</Nav.Link>
